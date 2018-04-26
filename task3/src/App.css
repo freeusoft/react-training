@@ -11,7 +11,7 @@
 
 .search {
   margin-left:50px;
-  margin-right:80px;
+  margin-right:50px;
   padding-top: 85px;
 }
 
@@ -34,7 +34,7 @@
   margin-left:50px;
   top: 20px;
   font-weight: bold;
-  position: fixed;
+  position: relative;
   font-size: 14pt;
 }
 
@@ -58,3 +58,90 @@
 .red-font {
   color: #f55363;
 }
+
+.env-mode {
+  float: right;
+  padding-right:50px;
+  color:gray;
+}
+
+.search-result {
+  min-height: 450px;
+}
+
+.search-result-not-found {
+  font-size: 35pt;
+  padding-top: 180px;
+  text-align: center;
+  color: darkgray;
+}
+
+.search-result-header {
+  height: 40px;
+  background-color: darkgray;
+  font-weight: bold;
+  font-size: 12pt;
+  padding-left: 50px;
+  padding-top: 7px;
+}
+
+.search-result-header-info {
+  float: left;
+}
+
+.search-result-header-sort {
+  float: right;
+  padding-right: 50px;
+}
+
+a {
+  color: #212529!important;
+}
+
+a.active {
+  color: #f55363!important;
+}
+
+.search-result-items {
+  padding-left: 40px;
+  padding-right: 25px;
+  margin-top: 40px;
+}
+
+.search-result-item {
+  width: 15rem;
+  margin: 25px;
+}
+
+.search-result-item-poster {
+  padding-bottom: 10px;
+}
+
+.search-result-item-info {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.search-result-item-name {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.search-result-item-year {
+  font-size: 8pt;
+  border-style: solid;
+  border-width: 1px;
+  width: 30px;
+  text-align: center;
+  float: right;
+}
+
+.search-result-item-genre {
+  font-size: 8pt;
+  padding-left: 10px;
+}
+
+.card {
+  border-style: none!important;
+}
+

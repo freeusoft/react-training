@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import ErrorBoundary from './ErrorBoundary'
 import './App.css'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import SearchResult from './components/SearchResult'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import SearchResult from './components/SearchResult/SearchResult'
 import './vendor/bootstrap.min.css'
 
 class App extends Component {
