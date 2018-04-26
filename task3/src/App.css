@@ -1,0 +1,60 @@
+.app {
+
+}
+
+.header {
+  height: 300px;
+  background-image: url('./static/header-background.png');
+  background-position: 28px -80px;
+  background-repeat: repeat;
+}
+
+.search {
+  margin-left:50px;
+  margin-right:80px;
+  padding-top: 85px;
+}
+
+.submit {
+  float:right;
+  background-color: #f55363!important;
+}
+
+.search-by-button-active {
+  background-color: #f55363!important;
+}
+
+.search-by-button {
+  margin-left: 10px;
+  padding-left: 15px!important;
+  padding-right: 15px!important;
+}
+
+.title {
+  margin-left:50px;
+  top: 20px;
+  font-weight: bold;
+  position: fixed;
+  font-size: 14pt;
+}
+
+.content {
+  min-height: 350px;
+}
+
+.footer {
+  height: 60px;
+  background-color: #424242;
+  padding-left: 50px;
+  padding-top: 17px;
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.white-font {
+  color: white;
+}
+
+.red-font {
+  color: #f55363;
+}
