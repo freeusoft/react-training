@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
-import ErrorBoundary from './ErrorBoundary'
 import './App.css'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import SearchResult from './components/SearchResult/SearchResult'
 import './vendor/bootstrap.min.css'
+import { Route, Switch } from 'react-router-dom'
+import HomeModule from './modules/HomeModule'
+import SearchResultModule from './modules/SearchResultModule'
+import NotFound from './components/NotFound'
 
 class App extends Component {
   render () {
     return (
       <div className='app'>
-        <ErrorBoundary>
-          <Header />
-          <SearchResult content='Some text here' />
-          <Footer />
-        </ErrorBoundary>
+        <Switch>
+          <Route exact path='/' component={HomeModule} />
+          <Route path='/results' component={SearchResultModule} />
+          <Route path='/result/:id' component={SearchResultModule} />
+          <Route path='*' component={NotFound} />
+        </Switch>
       </div>
     )
   }
