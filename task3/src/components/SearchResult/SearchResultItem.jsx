@@ -12,7 +12,7 @@ export default class SearchResultItems extends Component {
 
   render () {
     return (
-      <Link to={'/result/' + this.props.film.id}>
+      <Link to={'/result/' + this.props.film.id} className='search-result-item-link'>
         <div className='search-result-item card'>
           <img className='search-result-item-poster card-img-top' src={this.props.film.poster} />
           <div className='search-result-item-description'>

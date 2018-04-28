@@ -1,14 +1,15 @@
 .header {
-  height: 300px;
-  background-image: url('./static/header-background.png');
+  min-height: 300px;
+  background-image: url('./static/header-background.jpg');
   background-position: 28px -80px;
   background-repeat: repeat;
+  padding-right:50px;
+  padding-left:50px;
+  padding-top:35px;
 }
 
 .search {
-  margin-left:50px;
-  margin-right:50px;
-  padding-top: 85px;
+  padding-top: 35px;
 }
 
 .submit {
@@ -26,8 +27,6 @@
 }
 
 .title {
-  margin-left:50px;
-  top: 20px;
   font-weight: bold;
   position: relative;
   font-size: 14pt;
@@ -90,6 +89,10 @@
   padding-right: 50px;
 }
 
+.search-result-header-sort > a {
+  padding-left: 20px;
+}
+
 a {
   color: #f55363!important;
 }
@@ -103,6 +106,10 @@ a.active:hover {
   cursor: default;
 }
 
+a.search-result-item-link:hover {
+  text-decoration: none;
+}
+
 .search-result-items {
   padding-left: 40px;
   padding-right: 25px;
@@ -112,7 +119,11 @@ a.active:hover {
 .search-result-item {
   width: 15rem;
   margin: 25px;
-  cursor: pointer;
+  background-color: #ecf0f1!important;
+}
+
+.search-result-item:hover {
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .search-result-item-poster {
@@ -122,25 +133,31 @@ a.active:hover {
 .search-result-item-description {
   padding-left: 10px;
   padding-right: 10px;
+  text-decoration: none;
 }
 
 .search-result-item-name {
   text-transform: uppercase;
   font-weight: bold;
+  color: rgb(34, 34, 34);
 }
 
 .search-result-item-year {
   font-size: 8pt;
   border-style: solid;
+  border-radius: 2pt;
   border-width: 1px;
   width: 30px;
   text-align: center;
   float: right;
+  color: rgb(34, 34, 34);
 }
 
 .search-result-item-genre {
   font-size: 8pt;
   padding-left: 10px;
+  padding-bottom: 10px;
+  color: rgb(87, 87, 87);
 }
 
 .card {
@@ -154,5 +171,77 @@ a.active:hover {
   width: auto;
   height: 500px;
   margin-top: 100px;
+}
+
+.header-top-search-button {
+  float:right; 
+  color:#f55363;
+}
+
+.film-info {
+  padding-top: 50px;
+  height: 430px;
+  color: silver;
+}
+
+.film-info-poster {
+  float: left;
+  margin-right: 50px;
+}
+
+.film-info-description-wrapper {
+  padding-top: 20px;
+  float: left;
+  width: 500px;
+  font-weight: bold;
+}
+
+.film-info-name-and-rating-wrapper {
+  width: 100%;
+}
+
+.film-info-name {
+  color:#f55363;
+  font-size: 20pt;
+  font-weight: bold;
+  margin-right: 50px;
+}
+
+.film-info-rating {
+  color: green;
+  font-size: 12pt;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50%;
+  text-align: center;
+  padding: 6px;
+  font-weight: normal;
+  position: relative;
+  top: -4px;
+}
+
+.film-info-year-and-length-wrapper {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.film-info-year {
+  margin-right: 30px;
+}
+
+.film-info-description {
+  margin-bottom: 20px;
+}
+
+.film-info-director {
+  font-weight: normal;
+  font-size: 10pt;
+  margin-bottom: 10px;
+}
+
+.film-info-cast {
+  font-weight: normal;
+  font-size: 10pt;
 }
 

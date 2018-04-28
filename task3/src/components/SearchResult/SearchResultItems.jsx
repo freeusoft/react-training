@@ -23,7 +23,7 @@ export default class SearchResultItems extends Component {
       <div className='search-result-items row'>
         {
           this.state.filmsStub.map((elm, i) =>
-            <SearchResultItem film={elm} />
+            <SearchResultItem key={i} film={elm} />
           )
         }
       </div>

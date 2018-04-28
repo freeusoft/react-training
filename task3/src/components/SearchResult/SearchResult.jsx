@@ -17,7 +17,7 @@ class SearchResult extends Component {
         { notFound
           ? <SearchResultNotFound /> : (
             <div>
-              <SearchResultHeader />
+              <SearchResultHeader {...this.props} />
               <SearchResultItems />
             </div>)
         }

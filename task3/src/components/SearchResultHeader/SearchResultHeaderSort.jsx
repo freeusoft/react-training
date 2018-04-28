@@ -1,10 +1,22 @@
 import React, { Component } from 'react'
 
 export default class SearchResultHeaderSort extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      sortBy: 'releaseDate'
+    }
+  }
+
+  sortByClick (sort) {
+    this.setState({sortBy: sort})
+  }
+
   render () {
     return (
       <div className='search-result-header-sort'>
-        Sort by <a href='#' className='active'>release date</a> <a href='#'>rating</a>
+        Sort by <a href='#' className={this.state.sortBy === 'releaseDate' ? 'active' : ''} onClick={() => this.sortByClick('releaseDate')}>release date</a>
+        <a href='#' className={this.state.sortBy === 'rating' ? 'active' : ''} onClick={() => this.sortByClick('rating')}>rating</a>
       </div>
     )
   }

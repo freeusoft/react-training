@@ -5,10 +5,11 @@ import SearchResult from '../components/SearchResult/SearchResult'
 
 export default class SearchResultModule extends Component {
   render () {
+    console.log(this.props)
     return (
       <React.Fragment>
-        <Header />
-        <SearchResult />
+        <Header {...this.props.match.params} />
+        <SearchResult {...this.props.match.params} />
         <Footer />
       </React.Fragment>
     )
