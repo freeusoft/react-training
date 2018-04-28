@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SearchResultHeader from '../SearchResultHeader/SearchResultHeader'
 import SearchResultItems from './SearchResultItems'
 import SearchResultNotFound from './SearchResultNotFound'
+import './SearchResult.css'
 
 class SearchResult extends Component {
   componentWillReceiveProps (props) {

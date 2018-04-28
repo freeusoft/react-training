@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './FilmInfo.css'
 
 export default class FilmInfo extends Component {
   constructor (props) {

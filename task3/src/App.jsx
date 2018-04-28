@@ -4,7 +4,7 @@ import './vendor/bootstrap.min.css'
 import { Route, Switch } from 'react-router-dom'
 import HomeModule from './modules/HomeModule'
 import SearchResultModule from './modules/SearchResultModule'
-import NotFound from './components/NotFound'
+import NotFound from './components/NotFound/NotFound'
 
 class App extends Component {
   render () {

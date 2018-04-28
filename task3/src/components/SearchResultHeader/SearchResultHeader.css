@@ -1,0 +1,21 @@
+.search-result-header {
+    height: 40px;
+    background-color: darkgray;
+    font-weight: bold;
+    font-size: 12pt;
+    padding-left: 50px;
+    padding-top: 7px;
+}
+
+.search-result-header-info {
+    float: left;
+}
+
+.search-result-header-sort {
+    float: right;
+    padding-right: 50px;
+}
+
+.search-result-header-sort>a {
+    padding-left: 20px;
+}

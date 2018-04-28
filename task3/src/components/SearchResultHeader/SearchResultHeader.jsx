@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SearchResultHeaderInfo from './SearchResultHeaderInfo'
 import SearchResultHeaderSort from './SearchResultHeaderSort'
+import './SearchResultHeader.css'
 
 export default class SearchResult extends Component {
   render () {
