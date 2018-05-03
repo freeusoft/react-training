@@ -10,9 +10,14 @@ export default class SearchResultItems extends Component {
     }
   }
 
+  itemClickHandler () {
+    console.log('click')
+    window.scrollTo(0, 0)
+  }
+
   render () {
     return (
-      <Link to={'/result/' + this.props.film.id} className='search-result-item-link'>
+      <Link to={'/result/' + this.props.film.id} onClick={this.itemClickHandler} className='search-result-item-link'>
         <div className='search-result-item card'>
           <img className='search-result-item-poster card-img-top' src={this.props.film.poster} />
           <div className='search-result-item-description'>
