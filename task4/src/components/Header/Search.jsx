@@ -19,7 +19,7 @@ export default class Search extends Component {
   }
 
   onSubmitClick () {
-    window.location.href = '/results'
+    this.props.history.push('/results')
   }
 
   render () {
@@ -32,11 +32,11 @@ export default class Search extends Component {
         <div>
           <div className='searchByTrigger'>
             <span className='white-font'>SEARCH BY</span>
-            <button className={'search-by-button btn btn-primary btn-sm ' + (this.state.searchBy === SEARCH_BY_TITLE ? 'search-by-button-active' : '')}
+            <button className={'search-by-title search-by-button btn btn-primary btn-sm ' + (this.state.searchBy === SEARCH_BY_TITLE ? 'search-by-button-active' : '')}
               onClick={() => { this.searchByClick(SEARCH_BY_TITLE) }}>TITLE</button>
-            <button className={'search-by-button btn btn-primary btn-sm ' + (this.state.searchBy === SEARCH_BY_DIRECTOR ? 'search-by-button-active' : '')}
+            <button className={'search-by-director search-by-button btn btn-primary btn-sm ' + (this.state.searchBy === SEARCH_BY_DIRECTOR ? 'search-by-button-active' : '')}
               onClick={() => { this.searchByClick(SEARCH_BY_DIRECTOR) }}>DIRECTOR</button>
-            <button className='submit btn btn-primary btn-lg' onClick={this.onSubmitClick}>SEARCH</button>
+            <button className='submit btn btn-primary btn-lg' onClick={() => this.onSubmitClick()}>SEARCH</button>
           </div>
         </div>
       </div>

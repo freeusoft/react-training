@@ -15,8 +15,8 @@ export default class SearchResultHeaderSort extends Component {
   render () {
     return (
       <div className='search-result-header-sort'>
-        Sort by <a href='#' className={this.state.sortBy === 'releaseDate' ? 'active' : ''} onClick={() => this.sortByClick('releaseDate')}>release date</a>
-        <a href='#' className={this.state.sortBy === 'rating' ? 'active' : ''} onClick={() => this.sortByClick('rating')}>rating</a>
+        Sort by <a href='#' className={'sort-by-release-date ' + (this.state.sortBy === 'releaseDate' ? 'active' : '')} onClick={() => this.sortByClick('releaseDate')}>release date</a>
+        <a href='#' className={'sort-by-rating ' + (this.state.sortBy === 'rating' ? 'active' : '')} onClick={() => this.sortByClick('rating')}>rating</a>
       </div>
     )
   }

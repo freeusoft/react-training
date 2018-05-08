@@ -5,17 +5,14 @@ import SearchResultNotFound from './SearchResultNotFound'
 import './SearchResult.css'
 
 class SearchResult extends Component {
-  componentWillReceiveProps (props) {
-    if (this.props.not_found) {
-      this.setState({'not_found': true})
-    }
+  constructor (props) {
+    super(props)
   }
 
   render () {
-    const notFound = false
     return (
       <div className='search-result'>
-        { notFound
+        { this.props.not_found
           ? <SearchResultNotFound /> : (
             <div>
               <SearchResultHeader {...this.props} />

@@ -6,7 +6,6 @@ import './Header.css'
 
 export default class Header extends Component {
   render () {
-    console.log('header', this.props)
     const { id } = this.props
     return (
       <div className='header'>
@@ -15,7 +14,7 @@ export default class Header extends Component {
           {id && <button className='header-top-search-button btn btn-lg'>SEARCH</button>}
         </Link>
         {!id
-          ? <Search />
+          ? <Search history={this.props.history}/>
           : <FilmInfo />
         }
       </div>
