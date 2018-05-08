@@ -7,7 +7,7 @@ export default class HomeModule extends Component {
   render () {
     return (
       <React.Fragment>
-        <Header history={this.props.history}/>
+        <Header history={this.props.history} />
         <SearchResultNotFound />
         <Footer node_env={process.env.NODE_ENV} />
       </React.Fragment>

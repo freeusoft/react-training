@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class SearchResultItem extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   itemClickHandler () {
     window.scrollTo(0, 0)
   }
 
   render () {
     return (
-      <a href={'/result/' + this.props.film.id} onClick={this.itemClickHandler} className='search-result-item-link'>
+      <Link to={'/result/' + this.props.film.id} onClick={this.itemClickHandler} className='search-result-item-link'>
         <div className='search-result-item card'>
           <img className='search-result-item-poster card-img-top' src={this.props.film.poster} />
           <div className='search-result-item-description'>
@@ -20,7 +17,7 @@ export default class SearchResultItem extends Component {
           </div>
           <div className='search-result-item-genre card-text'>{this.props.film.genre}</div>
         </div>
-      </a>
+      </Link>
     )
   }
 }

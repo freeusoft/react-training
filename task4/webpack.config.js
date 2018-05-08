@@ -46,7 +46,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: "task4",
+            title: "MovieDB",
             hash: false,
             template: "./index.html"
         })

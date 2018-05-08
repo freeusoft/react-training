@@ -8,7 +8,7 @@ export default class SearchResultModule extends Component {
     console.log(this.props)
     return (
       <React.Fragment>
-        <Header {...this.props.match.params} history={this.props.history}/>
+        <Header {...this.props.match.params} history={this.props.history} />
         <SearchResult {...this.props.match.params} />
         <Footer />
       </React.Fragment>

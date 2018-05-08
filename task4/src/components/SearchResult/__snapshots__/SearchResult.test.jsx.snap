@@ -3,7 +3,7 @@
 exports[`SearchResultItem component test suite SearchResultItem renders correctly 1`] = `
 <a
   className="search-result-item-link"
-  href="/result/1"
+  href={undefined}
   onClick={[Function]}
 >
   <div
@@ -36,13 +36,13 @@ exports[`SearchResultItem component test suite SearchResultItem renders correctl
 </a>
 `;
 
-exports[`SearchResultItem component test suite SearchResultItems renders correctly 1`] = `
+exports[`SearchResultItems component test suite SearchResultItems renders correctly 1`] = `
 <div
   className="search-result-items row"
 >
   <a
     className="search-result-item-link"
-    href="/result/1"
+    href={undefined}
     onClick={[Function]}
   >
     <div
@@ -75,7 +75,7 @@ exports[`SearchResultItem component test suite SearchResultItems renders correct
   </a>
   <a
     className="search-result-item-link"
-    href="/result/2"
+    href={undefined}
     onClick={[Function]}
   >
     <div
@@ -108,7 +108,7 @@ exports[`SearchResultItem component test suite SearchResultItems renders correct
   </a>
   <a
     className="search-result-item-link"
-    href="/result/3"
+    href={undefined}
     onClick={[Function]}
   >
     <div
@@ -141,7 +141,7 @@ exports[`SearchResultItem component test suite SearchResultItems renders correct
   </a>
   <a
     className="search-result-item-link"
-    href="/result/4"
+    href={undefined}
     onClick={[Function]}
   >
     <div
@@ -174,7 +174,7 @@ exports[`SearchResultItem component test suite SearchResultItems renders correct
   </a>
   <a
     className="search-result-item-link"
-    href="/result/5"
+    href={undefined}
     onClick={[Function]}
   >
     <div
@@ -207,7 +207,7 @@ exports[`SearchResultItem component test suite SearchResultItems renders correct
   </a>
   <a
     className="search-result-item-link"
-    href="/result/6"
+    href={undefined}
     onClick={[Function]}
   >
     <div
@@ -240,7 +240,7 @@ exports[`SearchResultItem component test suite SearchResultItems renders correct
   </a>
   <a
     className="search-result-item-link"
-    href="/result/7"
+    href={undefined}
     onClick={[Function]}
   >
     <div

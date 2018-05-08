@@ -5,10 +5,6 @@ import SearchResultNotFound from './SearchResultNotFound'
 import './SearchResult.css'
 
 class SearchResult extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   render () {
     return (
       <div className='search-result'>

@@ -3,8 +3,9 @@ import SearchResult from './SearchResult'
 import SearchResultItem from './SearchResultItem'
 import SearchResultItems from './SearchResultItems'
 import SearchResultNotFound from './SearchResultNotFound'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
+import MockRouter from 'react-mock-router'
 
 describe('SearchResult component suite', ()=>{
   test('SearchResult component text equal', () => {
@@ -39,29 +40,35 @@ describe('SearchResultItem component test suite', ()=>{
   
   test('SearchResultItem renders correctly', () => {
     const tree = renderer.create(
-      <SearchResultItem film={film}/>
+      <MockRouter>
+        <SearchResultItem film={film}/>
+      </MockRouter>
     ).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
-  test('Item click', () => {
-    const wrapper = shallow(
-      <SearchResultItem film={film}/>
+  test('SearchResultItem click', () => {
+    const wrapper = mount(
+      <MockRouter>
+        <SearchResultItem film={film}/>
+      </MockRouter>
     )
     const scrollToMock = jest.fn()
     global.scrollTo = scrollToMock
 
-    wrapper.simulate('click')
+    wrapper.find(SearchResultItem).simulate('click')
     expect(scrollToMock.mock.calls.length).toBe(1)
-    expect(wrapper.props().href).toEqual('/result/' + film.id)
+    expect(wrapper.find('Link').props().to).toEqual('/result/' + film.id)
   })
 })
 
-describe('SearchResultItem component test suite', ()=>{
+describe('SearchResultItems component test suite', ()=>{
   
   test('SearchResultItems renders correctly', () => {
     const tree = renderer.create(
-      <SearchResultItems />
+      <MockRouter>
+        <SearchResultItems />
+      </MockRouter>
     ).toJSON()
     expect(tree).toMatchSnapshot()
   })
