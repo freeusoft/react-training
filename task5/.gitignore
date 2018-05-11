@@ -1,0 +1,7 @@
+/.vscode
+/dist
+/.idea
+/node_modules
+yarn.lock
+/coverage
+react-training.code-workspace

@@ -1,0 +1,15 @@
+import React, { Component } from 'react'
+import SearchResultHeaderInfo from './SearchResultHeaderInfo'
+import SearchResultHeaderSort from './SearchResultHeaderSort'
+import './SearchResultHeader.css'
+
+export default class SearchResultHeader extends Component {
+  render () {
+    return (
+      <div className='search-result-header'>
+        <SearchResultHeaderInfo {...this.props} />
+        { !this.props.id && <SearchResultHeaderSort /> }
+      </div>
+    )
+  }
+}

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component test suite Footer snapshot renders correctly 1`] = `
+<div
+  className="footer"
+>
+  <span
+    className="title red-font"
+  >
+    MovieDB
+  </span>
+  <span
+    className="env-mode"
+  >
+    dev
+  </span>
+</div>
+`;
