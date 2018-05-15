@@ -11,10 +11,12 @@ export default class Header extends Component {
       <div className='header'>
         <Link to='/'>
           <span className='title red-font'>MovieDB</span>
+        </Link>
+        <Link to='/results'>
           {id && <button className='header-top-search-button btn btn-lg'>SEARCH</button>}
         </Link>
         {!id
-          ? <Search history={this.props.history} />
+          ? <Search history={this.props.history} search={this.props.search} searchBy={this.props.searchBy} />
           : <FilmInfo />
         }
       </div>

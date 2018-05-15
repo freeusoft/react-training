@@ -1,33 +1,34 @@
 import React, { Component } from 'react'
 import './FilmInfo.css'
+import { connect } from 'react-redux'
 
-export default class FilmInfo extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      film: {id: 1, name: 'Kill bill', year: 2004, genre: 'Action & Adventure', director: 'Quentin Tarantino', poster: 'https://images-na.ssl-images-amazon.com/images/I/41qSUP7S3XL._AC_UL320_SR228,320_.jpg', rating: 4.2, length: 120, description: 'A former assassin knwon as The Bride wakens from a four-year coma. The child she carried in her womb is gone. Now she must wreak vengeance on the team of assassins who betrayed her - a team she was once part of.', cast: 'Uma Thurman, David Carradine, Daryl Hannah'}
-    }
-  }
-
+class FilmInfo extends Component {
   render () {
+    const { poster_path: posterPath, title, vote_average: voteAverage, release_date: releaseDate, runtime, overview, genres } = this.props.movie || ''
     return (
       <div className='film-info'>
-        <img className='film-info-poster' src={this.state.film.poster} />
+        <img className='film-info-poster' src={posterPath} />
         <div className='film-info-description-wrapper'>
           <div className='film-info-name-and-rating-wrapper'>
-            <span className='film-info-name'>{this.state.film.name}</span>
-            <span className='film-info-rating'>{this.state.film.rating}</span>
+            <span className='film-info-name'>{title}</span>
+            { voteAverage > 0 && <span className='film-info-rating'>{voteAverage}</span> }
           </div>
-          <div className='film-info-genre'>{this.state.film.genre}</div>
+          <div className='film-info-genre'>{genres && genres.join(', ')}</div>
           <div className='film-info-year-and-length-wrapper'>
-            <span className='film-info-year'>{this.state.film.year}</span>
-            <span className='film-info-length'>{this.state.film.length} min</span>
+            <span className='film-info-year'>{releaseDate && new Date(releaseDate).getFullYear()}</span>
+            { runtime && <span className='film-info-length'>{runtime} min</span> }
           </div>
-          <div className='film-info-description'>{this.state.film.description}</div>
-          <div className='film-info-director'>Director: {this.state.film.director}</div>
-          <div className='film-info-cast'>Cast: {this.state.film.cast}</div>
+          <div className='film-info-description'>{overview}</div>
         </div>
       </div>
     )
-  }
+  };
 }
+
+const mapStateToProps = state => ({
+  movie: state.result.movie || {}
+})
+
+export default connect(
+  mapStateToProps
+)(FilmInfo)

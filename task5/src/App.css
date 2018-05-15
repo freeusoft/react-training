@@ -45,3 +45,11 @@ a.active:hover {
 .card {
     border-style: none!important;
 }
+
+.find-movies-title {
+    font-size: 35pt;
+    padding-top: 180px;
+    text-align: center;
+    color: darkgray;
+    min-height: 450px;
+}

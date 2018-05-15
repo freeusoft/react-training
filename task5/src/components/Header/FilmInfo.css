@@ -7,6 +7,7 @@
 .film-info-poster {
     float: left;
     margin-right: 50px;
+    width: 200px;
 }
 
 .film-info-description-wrapper {

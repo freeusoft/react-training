@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import './App.css'
-import './vendor/bootstrap.min.css'
 import { Route, Switch } from 'react-router-dom'
 import HomeModule from './modules/HomeModule'
 import SearchResultModule from './modules/SearchResultModule'
 import NotFound from './components/NotFound/NotFound'
+import './App.css'
+import './vendor/bootstrap.min.css'
 
 class App extends Component {
   render () {

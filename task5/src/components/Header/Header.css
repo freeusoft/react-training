@@ -33,7 +33,10 @@
 }
 
 .header-top-search-button {
-    float:right; 
-    color:#f55363;
+    float: right;
+    color: #f55363;
 }
-  
+
+#inputSearch {
+    color: black;
+}
