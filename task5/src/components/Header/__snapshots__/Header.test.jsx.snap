@@ -22,13 +22,13 @@ exports[`FilmInfo component test suite FilmInfo renders correctly 1`] = `
       <span
         className="film-info-rating"
       >
-        4.2
+        10
       </span>
     </div>
     <div
       className="film-info-genre"
     >
-      Action & Adventure
+      Action, Adventure
     </div>
     <div
       className="film-info-year-and-length-wrapper"
@@ -41,26 +41,14 @@ exports[`FilmInfo component test suite FilmInfo renders correctly 1`] = `
       <span
         className="film-info-length"
       >
-        120
+        90
          min
       </span>
     </div>
     <div
       className="film-info-description"
     >
-      A former assassin knwon as The Bride wakens from a four-year coma. The child she carried in her womb is gone. Now she must wreak vengeance on the team of assassins who betrayed her - a team she was once part of.
-    </div>
-    <div
-      className="film-info-director"
-    >
-      Director: 
-      Quentin Tarantino
-    </div>
-    <div
-      className="film-info-cast"
-    >
-      Cast: 
-      Uma Thurman, David Carradine, Daryl Hannah
+      
     </div>
   </div>
 </div>
@@ -79,6 +67,11 @@ exports[`Header component test suite Header snapshot renders correctly 1`] = `
     >
       MovieDB
     </span>
+  </a>
+  <a
+    href={undefined}
+    onClick={[Function]}
+  >
     <button
       className="header-top-search-button btn btn-lg"
     >
@@ -100,19 +93,12 @@ exports[`Header component test suite Header snapshot renders correctly 1`] = `
       >
         <span
           className="film-info-name"
-        >
-          Kill bill
-        </span>
-        <span
-          className="film-info-rating"
-        >
-          4.2
-        </span>
+        />
       </div>
       <div
         className="film-info-genre"
       >
-        Action & Adventure
+        Action, Adventure
       </div>
       <div
         className="film-info-year-and-length-wrapper"
@@ -122,30 +108,10 @@ exports[`Header component test suite Header snapshot renders correctly 1`] = `
         >
           2004
         </span>
-        <span
-          className="film-info-length"
-        >
-          120
-           min
-        </span>
       </div>
       <div
         className="film-info-description"
-      >
-        A former assassin knwon as The Bride wakens from a four-year coma. The child she carried in her womb is gone. Now she must wreak vengeance on the team of assassins who betrayed her - a team she was once part of.
-      </div>
-      <div
-        className="film-info-director"
-      >
-        Director: 
-        Quentin Tarantino
-      </div>
-      <div
-        className="film-info-cast"
-      >
-        Cast: 
-        Uma Thurman, David Carradine, Daryl Hannah
-      </div>
+      />
     </div>
   </div>
 </div>

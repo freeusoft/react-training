@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 class FilmInfo extends Component {
   render () {
-    const { poster_path: posterPath, title, vote_average: voteAverage, release_date: releaseDate, runtime, overview, genres } = this.props.movie || ''
+    const { poster_path: posterPath, title, vote_average: voteAverage, release_date: releaseDate, runtime, overview, genres } = this.props.movie
     return (
       <div className='film-info'>
         <img className='film-info-poster' src={posterPath} />

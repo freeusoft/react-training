@@ -1,29 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
-import thunk from 'redux-thunk'
+import { PersistGate } from 'redux-persist/lib/integration/react'
 
 import './index.css'
 import App from './App'
+import LoadingView from './LoadingView'
 import ErrorBoundary from './ErrorBoundary'
-import rootReducer from './reducers'
-
-const store = createStore(
-  rootReducer,
-  compose(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-)
+import { persistor, store } from './store'
 
 ReactDOM.render((
   <ErrorBoundary>
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <PersistGate loading={<LoadingView />} persistor={persistor}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   </ErrorBoundary>
 ), document.getElementById('root'))

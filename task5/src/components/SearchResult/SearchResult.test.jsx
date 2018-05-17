@@ -3,9 +3,13 @@ import SearchResult from './SearchResult'
 import SearchResultItem from './SearchResultItem'
 import SearchResultItems from './SearchResultItems'
 import SearchResultNotFound from './SearchResultNotFound'
-import { shallow, mount } from 'enzyme'
+import { shallow, mount, render} from 'enzyme'
 import renderer from 'react-test-renderer'
 import MockRouter from 'react-mock-router'
+import configureStore from 'redux-mock-store'
+const mockStore = configureStore()
+import { getMovieFetch } from '../../actions'
+jest.mock("../../actions")
 
 describe('SearchResult component suite', ()=>{
   test('SearchResult component text equal', () => {
@@ -13,7 +17,7 @@ describe('SearchResult component suite', ()=>{
       <SearchResult />
     )
     const div = wrapper.find('.search-result')
-    expect(div.text()).toBe('<SearchResultHeader /><SearchResultItems />')
+    expect(div.text()).toBe('<SearchResultHeader /><Connect(SearchResultItems) />')
   })
 
   test('Not found', () => {
@@ -36,12 +40,16 @@ describe('SearchResult component suite', ()=>{
 })
 
 describe('SearchResultItem component test suite', ()=>{
-  const film = {id: 1, name: 'Kill bill', year: 2004, genre: 'Action & Adventure', director: 'Quentin Tarantino', poster: 'https://images-na.ssl-images-amazon.com/images/I/41qSUP7S3XL._AC_UL320_SR228,320_.jpg', rating: 10}
-  
+  const film = {id: 1, name: 'Kill bill', release_date: '01-02-2004', genres: ['Action', 'Adventure'], director: 'Quentin Tarantino', poster_path: 'https://images-na.ssl-images-amazon.com/images/I/41qSUP7S3XL._AC_UL320_SR228,320_.jpg', rating: 10}
+  let store
+  beforeEach(() => {
+    store = mockStore({})
+  })
+
   test('SearchResultItem renders correctly', () => {
     const tree = renderer.create(
       <MockRouter>
-        <SearchResultItem film={film}/>
+        <SearchResultItem film={film} store={store} />
       </MockRouter>
     ).toJSON()
     expect(tree).toMatchSnapshot()
@@ -50,32 +58,51 @@ describe('SearchResultItem component test suite', ()=>{
   test('SearchResultItem click', () => {
     const wrapper = mount(
       <MockRouter>
-        <SearchResultItem film={film}/>
+        <SearchResultItem film={film} store={store}/>
       </MockRouter>
     )
+    getMovieFetch.mockReturnValue({type:'GET_MOVIE'})
+    const component = wrapper.find(SearchResultItem).children()
     const scrollToMock = jest.fn()
     global.scrollTo = scrollToMock
-
-    wrapper.find(SearchResultItem).simulate('click')
+    component.simulate('click')
     expect(scrollToMock.mock.calls.length).toBe(1)
-    expect(wrapper.find('Link').props().to).toEqual('/result/' + film.id)
+    expect(component.find('Link').props().to).toEqual('/result/' + film.id)
   })
+
 })
 
-describe('SearchResultItems component test suite', ()=>{
-  
+describe('SearchResultItems component test suite', () => {
+  let store
+  beforeEach(() => {
+    store = mockStore({results:{movies:[]}})
+  })
+
   test('SearchResultItems renders correctly', () => {
     const tree = renderer.create(
       <MockRouter>
-        <SearchResultItems />
+        <SearchResultItems store={store}/>
       </MockRouter>
     ).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
+  test('SearchResultItems inner compopnents render count test', () => {
+    const wrapper = shallow(
+      <SearchResultItems store={mockStore({results:{movies:[{id:1},{id:2}]}})}/>
+    ).dive()
+    expect(wrapper.find(SearchResultItem)).toHaveLength(2)
+  })
+  
+  test('SearchResultItems have correct movies count props', () =>{
+    const wrapper = shallow(
+      <SearchResultItems store={mockStore({results:{}})}/>
+    )
+    expect(wrapper.props().movies).toHaveLength(0)
+  })
 })
 
-describe('Header component test suite', ()=>{
+describe('Header component test suite', () => {
   test('Header title should have text', () => {
     const wrapper = shallow(
       <SearchResultNotFound />

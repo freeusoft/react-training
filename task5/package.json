@@ -9,6 +9,7 @@
     "build": "webpack",
     "prod": "webpack --mode=production",
     "test": "jest",
+    "coverage": "jest --coverage",
     "dev": "webpack-dev-server --port 8081",
     "cypress": "cypress open"
   },
@@ -27,6 +28,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
+    "redux-persist": "^5.9.1",
     "redux-thunk": "^2.2.0",
     "standard-loader": "^6.0.1",
     "style-loader": "^0.21.0",
@@ -40,10 +42,13 @@
     "cypress": "^2.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "fetch-mock": "^6.4.2",
     "jest": "^22.4.3",
+    "jest-mock-action-creators": "^1.2.1",
     "react-addons-test-utils": "^15.6.2",
     "react-mock-router": "^1.0.15",
     "react-test-renderer": "^16.3.2",
+    "redux-mock-store": "^1.5.1",
     "standard": "^11.0.1"
   },
   "jest": {

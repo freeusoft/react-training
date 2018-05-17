@@ -24,7 +24,6 @@ class Search extends Component {
   }
 
   onSubmitClick () {
-    console.log('search click')
     this.props.dispatch(searchMoviesFetch(this.state.searchQuery, this.state.searchBy, this.props.sortMode || this.state.sortMode))
     this.props.history.push('/results')
   }

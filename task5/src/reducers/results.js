@@ -10,7 +10,7 @@ const sortMovies = (movies, sortMode) => {
 
 const results = (state = [], action) => {
   switch (action.type) {
-    case 'SEARCH_MOVIES':
+    case 'SEARCH_MOVIES_SUCCESS':
       return {
         ...state,
         movies: sortMovies(action.movies, action.sortMode),
