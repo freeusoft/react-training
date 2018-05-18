@@ -16,7 +16,7 @@ export default class Header extends Component {
           {id && <button className='header-top-search-button btn btn-lg'>SEARCH</button>}
         </Link>
         {!id
-          ? <Search history={this.props.history} search={this.props.search} searchBy={this.props.searchBy} />
+          ? <Search history={this.props.history} />
           : <FilmInfo />
         }
       </div>

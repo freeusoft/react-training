@@ -13,7 +13,7 @@ class Search extends Component {
     this.state = {
       searchBy: searchBy,
       searchPlaceholder: searchBy === SearchMode.TITLE ? SEARCH_BY_TITLE_PLACEHOLDER : SEARCH_BY_GENRES_PLACEHOLDER,
-      searchQuery: '',
+      searchQuery: this.props.search || '',
       sortMode: sortMode
     }
     this.onSearchChangeHandler = this.onSearchChangeHandler.bind(this)
@@ -62,7 +62,9 @@ class Search extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  sortMode: state.results.sortMode
+  sortMode: state.results.sortMode,
+  search: state.results.search,
+  searchBy: state.results.searchBy
 })
 
 const mapDispatchToProps = (dispatch) => ({
