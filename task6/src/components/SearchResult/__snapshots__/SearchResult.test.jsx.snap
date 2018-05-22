@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResultItem component test suite SearchResultItem renders correctly 1`] = `
+<a
+  className="search-result-item-link"
+  href={undefined}
+  onClick={[Function]}
+>
+  <div
+    className="search-result-item card"
+  >
+    <img
+      className="search-result-item-poster card-img-top"
+      src="https://images-na.ssl-images-amazon.com/images/I/41qSUP7S3XL._AC_UL320_SR228,320_.jpg"
+    />
+    <div
+      className="search-result-item-description"
+    >
+      <span
+        className="search-result-item-name card-title"
+      />
+      <span
+        className="search-result-item-year"
+      >
+        2004
+      </span>
+    </div>
+    <div
+      className="search-result-item-genre card-text"
+    >
+      Action, Adventure
+    </div>
+  </div>
+</a>
+`;
+
+exports[`SearchResultItems component test suite SearchResultItems renders correctly 1`] = `
+<div
+  className="search-result-items row"
+/>
+`;
