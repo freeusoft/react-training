@@ -16,7 +16,17 @@ const results = (state = [], action) => {
         movies: sortMovies(action.movies, action.sortMode),
         search: action.search,
         searchBy: action.searchBy,
-        sortMode: action.sortMode
+        sortMode: action.sortMode,
+        error: null
+      }
+    case 'SEARCH_MOVIES_ERROR':
+      return {
+        ...state,
+        movies: sortMovies(action.movies, action.sortMode),
+        search: action.search,
+        searchBy: action.searchBy,
+        sortMode: action.sortMode,
+        error: 'Movies not found because server error, try again some later...'
       }
     case 'SET_RESULTS_SORT_MODE':
       return {

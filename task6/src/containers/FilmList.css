@@ -1,40 +1,40 @@
-a.search-result-item-link:hover {
+a.film-link:hover {
     text-decoration: none;
 }
 
-.search-result-items {
+.films {
     padding-left: 40px;
     padding-right: 25px;
     margin-top: 40px;
 }
 
-.search-result-item {
+.film {
     width: 15rem;
     margin: 25px;
     background-color: #ecf0f1!important;
 }
 
-.search-result-item:hover {
+.film:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.search-result-item-poster {
+.film-poster {
     padding-bottom: 10px;
 }
 
-.search-result-item-description {
+.film-description {
     padding-left: 10px;
     padding-right: 10px;
     text-decoration: none;
 }
 
-.search-result-item-name {
+.film-name {
     text-transform: uppercase;
     font-weight: bold;
     color: rgb(34, 34, 34);
 }
 
-.search-result-item-year {
+.film-year {
     font-size: 8pt;
     border-style: solid;
     border-radius: 2pt;
@@ -45,18 +45,18 @@ a.search-result-item-link:hover {
     color: rgb(34, 34, 34);
 }
 
-.search-result-item-genre {
+.film-genre {
     font-size: 8pt;
     padding-left: 10px;
     padding-bottom: 10px;
     color: rgb(87, 87, 87);
 }
 
-.search-result {
+.film-list {
     min-height: 450px;
 }
 
-.search-result-not-found {
+.film-list-not-found {
     font-size: 35pt;
     padding-top: 180px;
     text-align: center;

@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import SearchResultItem from './SearchResultItem'
+import Film from './Film'
 import { connect } from 'react-redux'
 
-class SearchResultItems extends Component {
+class Films extends Component {
   render () {
     return (
-      <div className='search-result-items row'>
+      <div className='films row'>
         {
           this.props.movies.map((elm, i) =>
-            <SearchResultItem key={i} film={elm} />
+            <Film key={i} film={elm} />
           )
         }
       </div>
@@ -22,4 +22,4 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps
-)(SearchResultItems)
+)(Films)

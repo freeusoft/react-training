@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmInfo component test suite FilmInfo renders correctly 1`] = `
+<div
+  className="film-info"
+>
+  <div>
+    <img
+      className="film-info-poster"
+      src="https://images-na.ssl-images-amazon.com/images/I/41qSUP7S3XL._AC_UL320_SR228,320_.jpg"
+    />
+    <div
+      className="film-info-description-wrapper"
+    >
+      <div
+        className="film-info-name-and-rating-wrapper"
+      >
+        <span
+          className="film-info-name"
+        >
+          Kill bill
+        </span>
+        <span
+          className="film-info-rating"
+        >
+          10
+        </span>
+      </div>
+      <div
+        className="film-info-genre"
+      >
+        Action, Adventure
+      </div>
+      <div
+        className="film-info-year-and-length-wrapper"
+      >
+        <span
+          className="film-info-year"
+        >
+          2004
+        </span>
+        <span
+          className="film-info-length"
+        >
+          90
+           min
+        </span>
+      </div>
+      <div
+        className="film-info-description"
+      >
+        
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Header component test suite Header snapshot renders correctly 1`] = `
+<div
+  className="header"
+>
+  <a
+    href={undefined}
+    onClick={[Function]}
+  >
+    <span
+      className="title red-font"
+    >
+      MovieDB
+    </span>
+  </a>
+  <a
+    href={undefined}
+    onClick={[Function]}
+  >
+    <button
+      className="header-top-search-button btn btn-lg"
+    >
+      SEARCH
+    </button>
+  </a>
+  <div
+    className="film-info"
+  >
+    <div>
+      <img
+        className="film-info-poster"
+        src="https://images-na.ssl-images-amazon.com/images/I/41qSUP7S3XL._AC_UL320_SR228,320_.jpg"
+      />
+      <div
+        className="film-info-description-wrapper"
+      >
+        <div
+          className="film-info-name-and-rating-wrapper"
+        >
+          <span
+            className="film-info-name"
+          />
+        </div>
+        <div
+          className="film-info-genre"
+        >
+          Action, Adventure
+        </div>
+        <div
+          className="film-info-year-and-length-wrapper"
+        >
+          <span
+            className="film-info-year"
+          >
+            2004
+          </span>
+        </div>
+        <div
+          className="film-info-description"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

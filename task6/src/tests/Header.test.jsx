@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './Header'
-import FilmInfo from './FilmInfo'
-import Search from './Search'
+import Header from '../containers/Header'
+import FilmInfo from '../components/Header/FilmInfo'
+import Search from '../components/Header/Search'
 import { shallow, mount } from 'enzyme'
 import { createMemoryHistory } from 'history'
 import renderer from 'react-test-renderer'
@@ -9,8 +9,8 @@ import MockRouter from 'react-mock-router'
 import configureStore from 'redux-mock-store'
 const mockStore = configureStore()
 import { Provider } from 'react-redux'
-import { searchMoviesFetch, SearchMode, SortMode } from '../../actions'
-jest.mock("../../actions")
+import { searchMoviesFetch, SearchMode, SortMode } from '../actions'
+jest.mock("../actions")
 
 describe('Header component test suite', ()=>{
   let store
@@ -82,6 +82,7 @@ describe('Search component test suite', ()=>{
   let wrapper
   beforeEach(() => {
     store = mockStore({results:{sortMode:''}})
+    searchMoviesFetch.mockReturnValue({type:'SEARCH_MOVIES'})
     wrapper = shallow(
       <Search store={store}/>
     ).dive()
@@ -112,9 +113,8 @@ describe('Search component test suite', ()=>{
       </MockRouter>
     )
     const component = wrapper.find(Search).children()
-    searchMoviesFetch.mockReturnValue({type:'SEARCH_MOVIES'})
     component.find('.submit').simulate('click')
-    expect(history.location.pathname).toEqual('/results')
+    expect(history.location.pathname).toEqual('/search/')
   })
 
   test('Search input handlers test', () => {
@@ -128,14 +128,14 @@ describe('Search component test suite', ()=>{
     wrapper.find('#inputSearch').simulate('keypress', { key: 'A'})
     expect(history.location.pathname).toEqual('/')
     wrapper.find('#inputSearch').simulate('keypress', { key: 'Enter'})
-    expect(history.location.pathname).toEqual('/results')
+    expect(history.location.pathname).toEqual('/search/test query')
   })
 
   test('Search initial placeholder test', () => {
+    let store = mockStore({results:{sortMode:'', searchBy: SearchMode.GENRES}})
     wrapper = shallow(
-      <Search store={store} searchBy={SearchMode.GENRES}/>
+      <Search store={store} />
     ).dive()
-
     expect(wrapper.state().searchPlaceholder).toEqual('Action')
   })
 

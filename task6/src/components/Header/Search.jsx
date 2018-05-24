@@ -13,10 +13,15 @@ class Search extends Component {
     this.state = {
       searchBy: searchBy,
       searchPlaceholder: searchBy === SearchMode.TITLE ? SEARCH_BY_TITLE_PLACEHOLDER : SEARCH_BY_GENRES_PLACEHOLDER,
-      searchQuery: this.props.search || '',
+      searchQuery: this.props.query || '',
       sortMode: sortMode
     }
     this.onSearchChangeHandler = this.onSearchChangeHandler.bind(this)
+  }
+
+  static getDerivedStateFromProps (nextProps, prevState) {
+    nextProps.dispatch(searchMoviesFetch(nextProps.query || '', prevState.searchBy, nextProps.sortMode || prevState.sortMode))
+    return null
   }
 
   searchByClick (searchBy) {
@@ -25,7 +30,7 @@ class Search extends Component {
 
   onSubmitClick () {
     this.props.dispatch(searchMoviesFetch(this.state.searchQuery, this.state.searchBy, this.props.sortMode || this.state.sortMode))
-    this.props.history.push('/results')
+    this.props.history.push(`/search/${this.state.searchQuery}`)
   }
 
   onSearchChangeHandler (event) {
@@ -44,7 +49,7 @@ class Search extends Component {
         <div className='form-group'>
           <label className='white-font' htmlFor='inputSearch'>FIND YOUR MOVIE</label>
           <input className='form-control' id='inputSearch' type='text' placeholder={this.state.searchPlaceholder}
-            onChange={this.onSearchChangeHandler} defaultValue={this.props.search} onKeyPress={(e) => this.handleInputKeyPress(e)} />
+            onChange={this.onSearchChangeHandler} defaultValue={this.props.query} onKeyPress={(e) => this.handleInputKeyPress(e)} />
         </div>
         <div>
           <div className='searchByTrigger'>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { SearchMode } from '../../actions'
+import { SearchMode } from '../../../actions'
 
-class SearchResultHeaderInfo extends Component {
+class FilmListHeaderInfo extends Component {
   render () {
     return (
-      <div className='search-result-header-info'>
+      <div className='film-list-header-info'>
         { this.props.id ? `Films by ${this.props.searchBy.toLowerCase()}: ${this.props.search}` : this.props.movies.length + ' movies found' }
       </div>
     )
@@ -20,4 +20,4 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps
-)(SearchResultHeaderInfo)
+)(FilmListHeaderInfo)

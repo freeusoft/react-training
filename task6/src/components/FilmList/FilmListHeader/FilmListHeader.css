@@ -1,4 +1,4 @@
-.search-result-header {
+.film-list-header {
     height: 40px;
     background-color: darkgray;
     font-weight: bold;
@@ -7,15 +7,15 @@
     padding-top: 7px;
 }
 
-.search-result-header-info {
+.film-list-header-info {
     float: left;
 }
 
-.search-result-header-sort {
+.film-list-header-sort {
     float: right;
     padding-right: 50px;
 }
 
-.search-result-header-sort>a {
+.film-list-header-sort>a {
     padding-left: 20px;
 }

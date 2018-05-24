@@ -3,10 +3,10 @@ import './FilmInfo.css'
 import { connect } from 'react-redux'
 
 class FilmInfo extends Component {
-  render () {
+  getFilmInfo () {
     const { poster_path: posterPath, title, vote_average: voteAverage, release_date: releaseDate, runtime, overview, genres } = this.props.movie
     return (
-      <div className='film-info'>
+      <div>
         <img className='film-info-poster' src={posterPath} />
         <div className='film-info-description-wrapper'>
           <div className='film-info-name-and-rating-wrapper'>
@@ -22,11 +22,23 @@ class FilmInfo extends Component {
         </div>
       </div>
     )
-  };
+  }
+
+  render () {
+    return (
+      <div className='film-info'>
+        { this.props.error
+          ? <div className='film-info-error'>{this.props.error}</div>
+          : this.getFilmInfo()
+        }
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => ({
-  movie: state.result.movie || {}
+  movie: state.result.movie || {},
+  error: state.result.error
 })
 
 export default connect(

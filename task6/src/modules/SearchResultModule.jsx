@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Header from '../components/Header/Header'
+import Header from '../containers/Header'
 import Footer from '../components/Footer/Footer'
-import SearchResult from '../components/SearchResult/SearchResult'
+import FilmList from '../containers/FilmList'
 import { SearchMode } from '../actions'
 
 class SearchResultModule extends Component {
@@ -10,7 +10,7 @@ class SearchResultModule extends Component {
     return (
       <React.Fragment>
         <Header {...this.props.match.params} history={this.props.history} search={this.props.search} searchBy={this.props.searchBy} />
-        <SearchResult {...this.props.match.params} not_found={this.props.movies.length === 0} />
+        <FilmList {...this.props.match.params} not_found={this.props.movies.length === 0} error={this.props.error} />
         <Footer />
       </React.Fragment>
     )
@@ -20,7 +20,8 @@ class SearchResultModule extends Component {
 const mapStateToProps = state => ({
   movies: state.results.movies || [],
   search: state.results.search || '',
-  searchBy: state.results.searchBy || SearchMode.TITLE
+  searchBy: state.results.searchBy || SearchMode.TITLE,
+  error: state.results.error
 })
 
 export default connect(

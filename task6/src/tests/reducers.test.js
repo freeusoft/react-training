@@ -1,5 +1,5 @@
-import resultReducer from './result'
-import resultsReducer from './results'
+import resultReducer from '../reducers/result'
+import resultsReducer from '../reducers/results'
 import { GET_MOVIE_SUCCESS, SEARCH_MOVIES_SUCCESS, SET_RESULTS_SORT_MODE, SortMode, SearchMode } from '../actions'
 
 describe('result reducer', () => {
@@ -9,9 +9,7 @@ describe('result reducer', () => {
         type: GET_MOVIE_SUCCESS,
         movie: { id: 1 }
       })
-    ).toEqual({
-      movie: { id: 1 }
-    })
+    ).toEqual({ "error": null, "movie": { "id": 1 } })
 
     expect(
       resultReducer(undefined, {
@@ -33,6 +31,7 @@ describe('results reducer', () => {
         sortMode: SortMode.RELEASE_DATE
       })
     ).toEqual({
+      error: null,
       movies: [{ id: 1, release_date: 100, vote_average: 10 }, { id: 2, release_date: 90, vote_average: 7 }],
       search: 'Kill bill',
       searchBy: SearchMode.TITLE,

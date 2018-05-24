@@ -1,9 +1,9 @@
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import * as actions from './index.js'
+import * as actions from '../actions/index.js'
 import fetchMock from 'fetch-mock'
 import expect from 'expect'
-import { SET_RESULTS_SORT_MODE, SEARCH_MOVIES_SUCCESS, GET_MOVIE_SUCCESS, SortMode, SearchMode, API_URL } from './index.js'
+import { SET_RESULTS_SORT_MODE, SEARCH_MOVIES_SUCCESS, GET_MOVIE_SUCCESS, SortMode, SearchMode, API_URL } from '../actions/index.js'
 
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)

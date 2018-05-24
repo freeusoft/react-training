@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setResultsSortMode, SortMode } from '../../actions'
+import { setResultsSortMode, SortMode } from '../../../actions'
 
-class SearchResultHeaderSort extends Component {
+class FilmListHeaderSort extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -17,7 +17,7 @@ class SearchResultHeaderSort extends Component {
 
   render () {
     return (
-      <div className='search-result-header-sort'>
+      <div className='film-list-header-sort'>
         Sort by <a href='#' className={'sort-by-release-date ' + (this.state.sortBy === SortMode.RELEASE_DATE ? 'active' : '')} onClick={() => this.sortByClick(SortMode.RELEASE_DATE)}>release date</a>
         <a href='#' className={'sort-by-rating ' + (this.state.sortBy === SortMode.VOTE_AVERAGE ? 'active' : '')} onClick={() => this.sortByClick(SortMode.VOTE_AVERAGE)}>rating</a>
       </div>
@@ -35,4 +35,4 @@ const mapDispatchToProps = (dispatch) => ({
   dispatch: (action) => dispatch(action)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchResultHeaderSort)
+export default connect(mapStateToProps, mapDispatchToProps)(FilmListHeaderSort)

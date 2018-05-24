@@ -1,5 +1,5 @@
 import React from 'react'
-import NotFound from './NotFound'
+import NotFound from '../components/pages/NotFound'
 import renderer from 'react-test-renderer'
 import MockRouter from 'react-mock-router'
 
