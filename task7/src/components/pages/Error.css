@@ -1,0 +1,15 @@
+.error {
+    background-image: url('../../static/okay.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: auto;
+    height: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.error-text {
+    text-align: center;
+    font-size: 16pt;
+    padding-top: 25px;
+}
