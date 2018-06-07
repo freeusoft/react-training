@@ -1,0 +1,46 @@
+html {
+    scroll-behavior: smooth
+}
+
+.content {
+    min-height: 350px;
+}
+
+.white-font {
+    color: white;
+}
+
+.red-font {
+    color: #f55363;
+}
+
+.env-mode {
+    float: right;
+    padding-right: 50px;
+    color: gray;
+}
+
+a {
+    color: #f55363!important;
+}
+
+a.active {
+    color: #212529!important;
+}
+
+a.active:hover {
+    text-decoration: none;
+    cursor: default;
+}
+
+.card {
+    border-style: none!important;
+}
+
+.find-movies-title {
+    font-size: 35pt;
+    padding-top: 180px;
+    text-align: center;
+    color: darkgray;
+    min-height: 450px;
+}

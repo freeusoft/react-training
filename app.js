@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var app = express();
 
-var homeDir = './task7/dist';
+var homeDir = './task8/dist';
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

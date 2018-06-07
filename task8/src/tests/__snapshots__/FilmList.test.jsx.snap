@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Film component test suite Film renders correctly 1`] = `
+<a
+  className="film-link"
+  href={undefined}
+  onClick={[Function]}
+>
+  <div
+    className="film card"
+  >
+    <img
+      className="film-poster card-img-top"
+      src="https://images-na.ssl-images-amazon.com/images/I/41qSUP7S3XL._AC_UL320_SR228,320_.jpg"
+    />
+    <div
+      className="film-description"
+    >
+      <span
+        className="film-name card-title"
+      />
+      <span
+        className="film-year"
+      >
+        2004
+      </span>
+    </div>
+    <div
+      className="film-genre card-text"
+    >
+      Action, Adventure
+    </div>
+  </div>
+</a>
+`;
+
+exports[`Films component test suite Films renders correctly 1`] = `
+<div
+  className="films row"
+/>
+`;

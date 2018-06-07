@@ -1,0 +1,65 @@
+a.film-link:hover {
+    text-decoration: none;
+}
+
+.films {
+    padding-left: 40px;
+    padding-right: 25px;
+    margin-top: 40px;
+}
+
+.film {
+    width: 15rem;
+    margin: 25px;
+    background-color: #ecf0f1!important;
+}
+
+.film:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.film-poster {
+    padding-bottom: 10px;
+}
+
+.film-description {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.film-name {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(34, 34, 34);
+}
+
+.film-year {
+    font-size: 8pt;
+    border-style: solid;
+    border-radius: 2pt;
+    border-width: 1px;
+    width: 30px;
+    text-align: center;
+    float: right;
+    color: rgb(34, 34, 34);
+}
+
+.film-genre {
+    font-size: 8pt;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: rgb(87, 87, 87);
+}
+
+.film-list {
+    min-height: 450px;
+}
+
+.film-list-not-found {
+    font-size: 35pt;
+    padding-top: 180px;
+    text-align: center;
+    color: darkgray;
+    min-height: 450px;
+}

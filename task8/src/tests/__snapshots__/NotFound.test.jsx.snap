@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound component test suite NotFound component snapshot renders correctly 1`] = `
+<a
+  href={undefined}
+  onClick={[Function]}
+>
+  <div
+    className="not-found"
+  />
+</a>
+`;
