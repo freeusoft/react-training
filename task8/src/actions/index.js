@@ -32,12 +32,13 @@ export const fetchMoviesSuccess = (data: any, search: string, searchBy: string, 
   sortMode
 })
 
-export const fetchMoviesError = (search: string, searchBy: string, sortMode: string) => ({
+export const fetchMoviesError = (search: string, searchBy: string, sortMode: string, error: string) => ({
   type: SEARCH_MOVIES_ERROR,
   movies: [],
   search,
   searchBy,
-  sortMode
+  sortMode,
+  error
 })
 
 export const fetchMovieSuccess = (movie: any) => ({
@@ -56,7 +57,7 @@ export const searchMoviesFetch = (search: string, searchBy: string, sortMode: st
     const result = window.fetch((`${API_URL}/movies?search=${encodedQuery}&searchBy=${searchBy.toLowerCase()}&sortBy=${sortMode.toLowerCase()}`))
       .then(response => response.json())
       .then(json => dispatch(fetchMoviesSuccess(json.data, search, searchBy, sortMode)))
-      .catch(dispatch(fetchMoviesError(search, searchBy, sortMode)))
+      .catch(error => dispatch(fetchMoviesError(search, searchBy, sortMode, error)))
     return result
   }
 

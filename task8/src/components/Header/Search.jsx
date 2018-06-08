@@ -20,7 +20,6 @@ class Search extends Component<Object, Object> {
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
-    nextProps.dispatch(searchMoviesFetch(nextProps.query || '', prevState.searchBy, nextProps.sortMode || prevState.sortMode))
     return null
   }
 

@@ -2,13 +2,14 @@
 import React, { Component } from 'react'
 import Film from './Film'
 import { connect } from 'react-redux'
+import { getSortedMovies } from '../../selectors'
 
 class Films extends Component<Object, Object> {
   render () {
     return (
       <div className='films row'>
         {
-          this.props.movies.map((elm, i) =>
+          this.props.films.map((elm, i) =>
             <Film key={i} film={elm} />
           )
         }
@@ -17,8 +18,9 @@ class Films extends Component<Object, Object> {
   }
 }
 
-const mapStateToProps = state => ({
-  movies: state.results.movies || []
+
+const mapStateToProps = (state, props) => ({
+  films: getSortedMovies(state) || []
 })
 
 export default connect(
