@@ -1,9 +1,10 @@
+// @flow
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getMovieFetch } from '../../actions'
 
-class Film extends Component {
+class Film extends Component<Object, Object> {
   itemClickHandler () {
     this.props.dispatch(getMovieFetch(this.props.film.id))
     window.scrollTo(0, 0)

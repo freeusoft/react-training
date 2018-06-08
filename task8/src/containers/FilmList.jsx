@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react'
 import FilmListHeader from '../components/FilmList/FilmListHeader/FilmListHeader'
 import Films from '../components/FilmList/Films'
@@ -5,7 +6,7 @@ import FilmListNotFound from '../components/pages/FilmListNotFound'
 import Error from '../components/pages/Error'
 import './FilmList.css'
 
-class FilmList extends Component {
+class FilmList extends Component<Object, Object> {
   render () {
     return (
       <div className='film-list'>

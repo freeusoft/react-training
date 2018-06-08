@@ -1,8 +1,9 @@
+// @flow
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { SearchMode } from '../../../actions'
 
-class FilmListHeaderInfo extends Component {
+class FilmListHeaderInfo extends Component<Object, Object> {
   render () {
     return (
       <div className='film-list-header-info'>

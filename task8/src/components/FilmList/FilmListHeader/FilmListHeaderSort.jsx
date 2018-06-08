@@ -1,9 +1,10 @@
+// @flow
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setResultsSortMode, SortMode } from '../../../actions'
 
-class FilmListHeaderSort extends Component {
-  constructor (props) {
+class FilmListHeaderSort extends Component<Object, Object> {
+  constructor (props: Object) {
     super(props)
     this.state = {
       sortBy: this.props.sortMode || SortMode.RELEASE_DATE

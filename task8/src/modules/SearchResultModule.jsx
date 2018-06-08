@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from '../containers/Header'
@@ -5,7 +6,7 @@ import Footer from '../components/Footer/Footer'
 import FilmList from '../containers/FilmList'
 import { SearchMode } from '../actions'
 
-class SearchResultModule extends Component {
+class SearchResultModule extends Component<Object, Object> {
   render () {
     return (
       <React.Fragment>

@@ -1,4 +1,5 @@
-const result = (state = [], action) => {
+// @flow
+const result = (state: any = [], action: Object) => {
   switch (action.type) {
     case 'GET_MOVIE_SUCCESS':
       return {

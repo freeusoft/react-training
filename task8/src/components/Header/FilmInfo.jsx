@@ -1,8 +1,9 @@
+// @flow
 import React, { Component } from 'react'
 import './FilmInfo.css'
 import { connect } from 'react-redux'
 
-class FilmInfo extends Component {
+class FilmInfo extends Component<Object, Object> {
   getFilmInfo () {
     const { poster_path: posterPath, title, vote_average: voteAverage, release_date: releaseDate, runtime, overview, genres } = this.props.movie
     return (

@@ -1,8 +1,9 @@
+// @flow
 import React, { Component } from 'react'
 import Film from './Film'
 import { connect } from 'react-redux'
 
-class Films extends Component {
+class Films extends Component<Object, Object> {
   render () {
     return (
       <div className='films row'>

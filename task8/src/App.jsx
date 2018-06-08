@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import HomeModule from './modules/HomeModule'
@@ -6,7 +8,7 @@ import NotFound from './components/pages/NotFound'
 import './App.css'
 import './vendor/bootstrap.min.css'
 
-class App extends Component {
+class App extends Component<Object, Object> {
   render () {
     return (
       <div className='app'>

@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import injectSheet from 'react-jss'
@@ -30,7 +31,7 @@ const styles = {
 }
 
 @injectSheet(styles)
-export default class Footer extends Component {
+export default class Footer extends Component<Object, Object> {
   render () {
     const {classes, children} = this.props
     return (

@@ -1,12 +1,13 @@
+// @flow
 import React, { Component } from 'react'
 
-export default class ErrorBoundary extends Component {
-  constructor (props) {
+export default class ErrorBoundary extends Component<Object, Object> {
+  constructor (props: Object) {
     super(props)
     this.state = { error: null, errorInfo: null }
   }
 
-  componentDidCatch (error, errorInfo) {
+  componentDidCatch (error: string, errorInfo: any) {
     // Catch errors in any components below and re-render with error message
     this.setState({
       error: error,

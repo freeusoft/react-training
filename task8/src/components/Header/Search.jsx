@@ -1,3 +1,4 @@
+// @flow 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { searchMoviesFetch, SearchMode, SortMode } from '../../actions'
@@ -5,8 +6,10 @@ import { searchMoviesFetch, SearchMode, SortMode } from '../../actions'
 const SEARCH_BY_TITLE_PLACEHOLDER = 'Stranger things'
 const SEARCH_BY_GENRES_PLACEHOLDER = 'Action'
 
-class Search extends Component {
-  constructor (props) {
+class Search extends Component<Object, Object> {
+  //onSearchChangeHandler: (Object) => void;
+
+  constructor (props: Object) {
     super(props)
     const searchBy = this.props.searchBy || SearchMode.TITLE
     const sortMode = this.props.sortMode || SortMode.RELEASE_DATE
@@ -16,7 +19,7 @@ class Search extends Component {
       searchQuery: this.props.query || '',
       sortMode: sortMode
     }
-    this.onSearchChangeHandler = this.onSearchChangeHandler.bind(this)
+    //this.onSearchChangeHandler = this.onSearchChangeHandler.bind(this)
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
@@ -33,7 +36,7 @@ class Search extends Component {
     this.props.history.push(`/search/${this.state.searchQuery}`)
   }
 
-  onSearchChangeHandler (event) {
+  onSearchChangeHandler = (event) => {
     this.setState({searchQuery: event.target.value})
   }
 

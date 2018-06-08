@@ -1,8 +1,9 @@
+// @flow
 import React, { Component } from 'react'
 import Header from '../containers/Header'
 import Footer from '../components/Footer/Footer'
 
-export default class HomeModule extends Component {
+export default class HomeModule extends Component<Object, Object> {
   render () {
     return (
       <React.Fragment>

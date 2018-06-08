@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 
-export default class FilmInfo extends Component<any, any> {
+export default class FilmInfo extends Component<Object, Object> {
   constructor (props: any) {
     super(props)
 
