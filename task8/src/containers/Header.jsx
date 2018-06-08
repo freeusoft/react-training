@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Search from '../components/Header/Search'
 import FilmInfo from '../components/Header/FilmInfo'
 import { Link } from 'react-router-dom'
+
 import './Header.css'
 
 export default class Header extends Component<Object, Object> {

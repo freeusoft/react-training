@@ -7,8 +7,6 @@ const SEARCH_BY_TITLE_PLACEHOLDER = 'Stranger things'
 const SEARCH_BY_GENRES_PLACEHOLDER = 'Action'
 
 class Search extends Component<Object, Object> {
-  //onSearchChangeHandler: (Object) => void;
-
   constructor (props: Object) {
     super(props)
     const searchBy = this.props.searchBy || SearchMode.TITLE
@@ -19,7 +17,6 @@ class Search extends Component<Object, Object> {
       searchQuery: this.props.query || '',
       sortMode: sortMode
     }
-    //this.onSearchChangeHandler = this.onSearchChangeHandler.bind(this)
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {

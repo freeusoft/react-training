@@ -30,10 +30,9 @@ const styles = {
   }
 }
 
-@injectSheet(styles)
-export default class Footer extends Component<Object, Object> {
+class Footer extends Component<Object, Object> {
   render () {
-    const {classes, children} = this.props
+    const { classes } = this.props
     return (
       <div className={classes.footer}>
         <span className={classNames(classes.title, classes.redFont)}>MovieDB</span>
@@ -42,3 +41,5 @@ export default class Footer extends Component<Object, Object> {
     )
   }
 }
+
+export default injectSheet(styles)(Footer)
