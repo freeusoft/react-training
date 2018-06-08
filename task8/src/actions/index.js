@@ -1,8 +1,8 @@
 // @flow
 import 'isomorphic-fetch'
+import { List } from 'immutable'
 
 export const API_URL = 'http://react-cdp-api.herokuapp.com'
-
 export const SET_RESULTS_SORT_MODE = 'SET_RESULTS_SORT_MODE'
 export const SEARCH_MOVIES_SUCCESS = 'SEARCH_MOVIES_SUCCESS'
 export const SEARCH_MOVIES_ERROR = 'SEARCH_MOVIES_ERROR'
@@ -24,7 +24,7 @@ export const setResultsSortMode = (sortMode: string) => ({
   sortMode
 })
 
-export const fetchMoviesSuccess = (data: any, search: string, searchBy: string, sortMode: string) => ({
+export const fetchMoviesSuccess = (data: List<Object>, search: string, searchBy: string, sortMode: string) => ({
   type: SEARCH_MOVIES_SUCCESS,
   movies: data,
   search,

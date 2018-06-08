@@ -1,14 +1,22 @@
 // @flow
-import { SortMode } from '../actions'
+import { List } from 'immutable'
+import { SortMode, SearchMode } from '../actions'
 
-const sortMovies = (movies: Array<Object>, sortMode: string) => {
+const sortMovies = (movies: List<Object>, sortMode: string) => {
   if (sortMode === SortMode.RELEASE_DATE) {
     return movies.sort((a, b) => new Date(b.release_date) - new Date(a.release_date))
   }
   return movies.sort((a, b) => b.vote_average - a.vote_average)
 }
+const initialState = {
+  movies: List(),
+  search: '',
+  searchBy: SearchMode.TITLE,
+  sortMode: SortMode.RELEASE_DATE,
+  error: null
+}
 
-const results = (state: Object = {}, action: Object) => {
+const results = (state: Object = initialState, action: Object) => {
   switch (action.type) {
     case 'SEARCH_MOVIES_SUCCESS':
       return {
